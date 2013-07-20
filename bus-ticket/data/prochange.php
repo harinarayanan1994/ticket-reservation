@@ -30,9 +30,7 @@ if( $us==""||$op==""||$np==""||$cp=="")
 	die("Server Error:Please Fill all the required details");
 else if($l<5||$l>10)
 	die("Server error:invalid password");
-else if($_SESSION['log_user']=="")
-	{echo "<br><a href='http://localhost/bus-ticket/data/log.php'>LOGIN</a><br>";die("Please login to continue");
-	}
+
 else if(!preg_match('/^\w+$/',$np))
 	die("Server Error:Invalid Password");
 
