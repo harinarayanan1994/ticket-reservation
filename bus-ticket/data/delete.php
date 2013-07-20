@@ -32,6 +32,9 @@ if( $from==""||$to==""||$dep==""||$arr==""||$no=="")
 	die("Server Error:Please Fill all the required details");
 else if($from==$to||$dep==$arr)
 	die("Server error:Invalid input");
+else if($_SESSION['log_user']=="")
+	{echo "<br><a href='http://localhost/bus-ticket/data/log.php'>LOGIN</a><br>";die("Please login to continue");
+	}
 
 else 
 {
