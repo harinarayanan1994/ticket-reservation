@@ -1,0 +1,23 @@
+<html>
+
+<form name='hari' action='http://localhost/bus-ticket/data/cancel.php' method='POST'>
+<head><script>
+function check(){
+if(hari.num.value!=hari.rep.value)
+	{alert("Rewrite correct password!!!");hari.rep.focus();}
+}</script></head>
+<body bgcolor='wheat'><center>
+<h1>TICKET CANCELLATION</h1>
+<br><table border='2'><tr><td>Name:<td><input type="text" name='name'></tr>
+<tr><td>Date:<td>Day:<input type='text' name='date' size='1'>Month:<input type='text' name='mon' size='1'>Year:(YY)<input type='text' name='yr' size='1'></tr>
+<tr><td>From:<td><input type='text' name='from'></tr>
+<tr><td>To:<td><input type='text' name='to'></tr>
+<tr><td>Departure:<td><input type='time' name='dep'></tr>
+<tr><td>Seats Booked:<td><input type="number" name='seat' min='1' max='58'></tr>
+<tr><td>N.of seats u want to cancel:<td><input type="number" name='remseat' min='1' max='58'></tr>
+<tr><td>Credit card:<td><input type='radio' name='card' checked='checked'  value='VISA'>VISA<input type='radio' name='card' value='Master Card' >Master Card
+<input type='radio' name='card' value='American Express'>American Express<input type='radio' name='card' value='Discover'>Discover</tr>
+<tr><td>Card Number:<td><input type='password' name='num'></tr>
+<tr><td>Repeat Number:<td><input type='password' name='rep' onblur='check()'></tr>
+<tr><td colspan='2' align='center'><input type='submit' value='Cancel ticket'></tr></table>
+</body></form></html>

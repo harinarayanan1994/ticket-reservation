@@ -1,0 +1,167 @@
+<html>
+<head>
+ <style>
+.margin
+{
+margin-top:3px;
+margin-left:25%;
+}
+</style>
+<script>
+
+    
+
+function showform()
+{
+ 
+	document.getElementById('form').style.visibility='visible';
+	
+}
+function validate()
+{ 
+	if((hari.name.value=="")||
+	(hari.id.value=="")||(hari.pwd.value=="")||(hari.pwd1.value=="")||(hari.gender.value==""))
+		{if(!confirm("please fill all the required details!!"))
+					alert("SORRY!!your entry is not registered!!");
+		
+			}
+	 else 
+	{confirm("all inputs are validated");
+	document.getElementById('a').style.visibility='visible';
+	
+	
+	}
+}
+
+
+
+function checkpwd()
+{
+
+
+if(hari.pwd.value.length<5||hari.pwd.value.length>10)
+	{confirm("password must have atleast 5 letters and 10 maximum");
+	hari.pwd.focus();
+}
+
+
+}
+
+function mail()
+{
+var l=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var x=document.forms["hari"]["id"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if ((!x.match(l))||atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+  hari.id.focus();
+  }
+}
+function validate_pass(passw,text)
+{
+var let=/^\w+$/;
+if(!passw.value.match(let))
+	{
+	confirm(text);
+	hari.pwd.focus();
+	}	
+
+}
+	
+function checkpwd1()
+{
+	if(hari.pwd.value!=hari.pwd1.value)
+	{confirm("rewrite correct password");
+	hari.pwd1.focus();
+	}
+}
+
+function func()
+{
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+
+var grd=ctx.createLinearGradient(0,0,1180,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(.25,"magenta");
+grd.addColorStop(.50,"green");
+grd.addColorStop(.75,"blue");
+
+grd.addColorStop(1,"red");
+
+
+ctx.fillStyle=grd;
+ctx.font="50px Times Roman";
+ctx.fillText("WELCOME TO VOLVO DELUXE BUS SERVICE",10,50);
+
+}
+</script>
+	
+
+
+    			
+</head>
+
+<body bgcolor="wheat" onload="func()"><marquee direction='right'>
+<canvas id="myCanvas" width="1180" height="100"  >
+</canvas></marquee>
+  <center><img src='http://localhost/bus-ticket/data/god.jpg'><br><audio controls autoplay >
+  <source src="http://localhost/bus-ticket/data/god.ogg" type="audio/ogg">
+  <source src="http://localhost/bus-ticket/data/god.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</center>
+</h1><br><center><a href='http://localhost/bus-ticket/data/try.php'>Our Services</a><br><input type='button' value='terms and conditions' onclick="(window.open('http://localhost/bus-ticket/data/term.html'))"><br>
+<input type='button' value='click to view our buses' onclick="(window.open('http://localhost/bus-ticket/data/exam.html'))">(video only in chrome)<br>
+<form name="main" action="http://localhost/bus-ticket/data/log.php"><input type="button" name="sign up" value="sign up" onclick="showform()"><input type="submit" name="login" value="login" >
+</form></center>
+<hr>CONTACT:</b><br>&nbsp &nbsp &nbsp &nbsp S.Hari Narayanan<br>
+&nbsp &nbsp &nbsp &nbsp Manager,Volvo Bus Service,<br>
+&nbsp &nbsp &nbsp &nbsp 26/11,Near Central Bus Stand,<br>
+&nbsp &nbsp &nbsp &nbsp Neyveli Township.<br><b>PHONE:</b>04142-245367<hr>
+    
+
+
+
+<div id='form' style="visibility:hidden">
+<form name="hari" action="http://localhost/bus-ticket/data/projectform.php" method="post">
+<marquee direction="right"><h1><b>REGISTRATION FORM</b></h1>
+</marquee><div class="margin">
+
+<table border="3">
+<tr><td>*Name:<td><input type="text" name="name" onblur="this.value = this.value.substr(0, 1).toUpperCase() + this.value.substr(1);"/>
+ 
+      
+  
+<tr><td>Gender:<td><input type="radio" name="gender" value="male" id="male" checked="checked">male<input type="radio" name="gender" value="female" id="female">female</tr>
+
+
+<tr><td>*Username:<td><input type="text" name="user"></tr>
+<tr><td>*Email ID:<td><input type="text" name="id" onblur="mail()"></tr>
+
+
+
+<tr><td >Residential Address:<td ><Textarea name="add" rows="4"></textarea></tr><br>
+<tr><td>Phone:<td><input type="text" name="phone"></tr><br>
+
+
+<tr><td>*Password(5 to 10):<td><input type="password" name="pwd" onblur="checkpwd();validate_pass(hari.pwd,'The password should not contain special characters!!!');" ></tr>
+<tr><td>*Re-enter Password:<td><input type="password" name="pwd1" onblur="checkpwd1()"></tr>
+<tr><td colspan="2" align="center"><input type="button" value="validate" onclick="validate()"><p id="a" style="visibility:hidden">
+<input type="submit" value="add to database"></p></tr>
+<tr><td colspan="2">
+<h4><b>NOTE:</b></h4><center>Fields marked with * are mandatory</center></tr>
+
+</table>
+
+</div>
+</form>
+</div>
+
+
+
+</body>
+</html>
