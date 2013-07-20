@@ -51,6 +51,9 @@ if (isset($_POST)) {
 $t=explode('/',date('d/m/y'));
 if($name==""||$num==""||$seat==""||$dep==""||$cancel==""||$from==""||$to==""||$date==""||$m==""||$y=="")
 	die("Server Error:Please fill all details");
+else if($_SESSION['log_user']=="")
+	{echo "<br><a href='http://localhost/bus-ticket/data/log.php'>LOGIN</a><br>";die("Please login to continue");
+	}
 else if($num!=$rep)
 	die("Server Error:Rewrite credit card number correctly");
 else if($from==$to)
